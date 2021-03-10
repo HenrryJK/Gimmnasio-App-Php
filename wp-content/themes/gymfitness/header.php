@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php  wp_head();?>
 </head>
 <body>
     <header class="site_header">
@@ -12,9 +13,16 @@
             <div class="logo">
                 <img src="<?php echo get_template_directory_uri(); ?>\img\logo.svg" alt= "logo site">
             </div>
-            <nav>
-              <!-- Navegacion aqui  -->
-            </nav>
+                <?php 
+                $args = array(
+                    // arreglo asociativo y muestras los menus creados
+                    'theme_location' => 'menu-principal',
+                    'container' => 'nav' ,
+                    'container_class' => 'manu-principal'
+                );
+                wp_nav_menu($args);
+
+                ?>
         </div>
         </div>
 
