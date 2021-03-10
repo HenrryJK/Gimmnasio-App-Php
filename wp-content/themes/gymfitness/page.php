@@ -1,3 +1,11 @@
+ <!-- <header class="site-header">
+<h1>  Nombre del Sitio  </h1>
+
+</header> -->
+
+<?php get_header();  ?>
+
+
 <?php 
     while( have_posts() ):the_post();
 ?>
@@ -10,3 +18,4 @@ Escrito por : <?php the_author(); ?>
 Escrito Fecha : <?php the_Date(); ?>
 
 <?php  endwhile; ?>
+<?php get_footer();  ?>
