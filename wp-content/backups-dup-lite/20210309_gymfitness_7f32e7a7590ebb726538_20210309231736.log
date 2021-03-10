@@ -1,0 +1,66 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: March 9, 2021 11:18 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.4.0
+WORDPRESS:	5.6.2
+PHP INFO:	7.3.5 | SAPI: cgi-fcgi
+SERVER:		nginx/1.16.0 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 4294967296 (256M default) 
+MEMORY STACK: 2MB
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   MYSQLDUMP
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Is Supported
+MYSQL DUMP ERROR 2
+
+==================================================================================
+DUPLICATOR ERROR
+Please try again! If the error persists see the Duplicator 'Help' menu.
+---------------------------------------------------------------------------------
+MESSAGE:
+	Shell mysql dump error. Change SQL Script to the "PHP Code" in the Duplicator > Settings > Packages.
+TRACE:
+	 1. class.pack.database.php : Error (572)
+	 2. class.pack.database.php : mysqlDump (208)
+	 3. class.pack.php : build (1311)
+	 4. ctrl.package.php : runZipBuild (98)
+	 5. class-wp-hook.php : duplicator_package_build (287)
+	 6. class-wp-hook.php : apply_filters (311)
+	 7. plugin.php : do_action (484)
+	 8. admin-ajax.php : do_action (184)
+==================================================================================
+
+
+==================================================================================
+DUPLICATOR ERROR
+Please try again! If the error persists see the Duplicator 'Help' menu.
+---------------------------------------------------------------------------------
+MESSAGE:
+	Runtime error in DUP_Database::Build. Shell mysql dump error. Change SQL Script to the "PHP Code" in the Duplicator > Settings > Packages.
+DETAILS:
+	Exception: Exception: Shell mysql dump error. Change SQL Script to the "PHP Code" in the Duplicator > Settings > Packages. in C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-content\plugins\duplicator\classes\class.logging.php:275
+Stack trace:
+#0 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-content\plugins\duplicator\classes\package\class.pack.database.php(572): DUP_Log::Error('Shell mysql dum...', '', 1)
+#1 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-content\plugins\duplicator\classes\package\class.pack.database.php(208): DUP_Database->mysqlDump('C:/xampp/mysql/...')
+#2 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-content\plugins\duplicator\classes\package\class.pack.php(1311): DUP_Database->build(Object(DUP_Package), 1)
+#3 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-content\plugins\duplicator\ctrls\ctrl.package.php(98): DUP_Package->runZipBuild()
+#4 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-includes\class-wp-hook.php(287): duplicator_package_build('')
+#5 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#7 C:\Users\HENRY\Local Sites\gymfitness\app\public\wp-admin\admin-ajax.php(184): do_action('wp_ajax_duplica...')
+#8 {main}
+TRACE:
+	 1. class.pack.database.php : Error (243)
+	 2. class.pack.php : build (1311)
+	 3. ctrl.package.php : runZipBuild (98)
+	 4. class-wp-hook.php : duplicator_package_build (287)
+	 5. class-wp-hook.php : apply_filters (311)
+	 6. plugin.php : do_action (484)
+	 7. admin-ajax.php : do_action (184)
+==================================================================================
+
