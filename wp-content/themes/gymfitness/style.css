@@ -13,6 +13,18 @@
 
 */
 
-body {
-  background-color: rgb(230, 106, 106);
+:root {
+  --fuentePrincipal: "Open Sans", sans-serif;
+  --fuenteTexto: "Raleway", sans-serif;
+  --fuenteSecundaria: "Staatliches", cursive;
+  /*  Colores */
+  --colorPrimario: #ff5800;
+  --grisOscuro: #2f2e2e;
+  --grisClaro: #ebebeb;
+  --blanco: #ffffff;
+  --black: #000000;
+}
+
+h1 {
+  font-family: var(--fuentePrincipal);
 }
