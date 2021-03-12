@@ -2,7 +2,7 @@
 /// menus creados que son de navegacion 
 function gymfitness_menus() { 
     register_nav_menus(array(
-        'menu_principal' => __('Menu Principal' , 'gymfitness')
+        'menu-principal' => __('menus principal' , 'gymfitness')
     ));
 }
 
@@ -13,7 +13,7 @@ add_action('init' , 'gymfitness_menus' );
 function gymfitness_scripts_styles() {
     wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '8.0.1');
 
-    wp_enqueue_style('googleFont','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Staatliches&display=swap',array(), '1.0.0');
+    wp_enqueue_style('googleFont','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Staatliches&display=swap', array(), '1.0.0');
    
    
         /// hoja de estilos 

@@ -18,7 +18,7 @@
                     // arreglo asociativo y muestras los menus creados
                     'theme_location' => 'menu-principal',
                     'container' => 'nav' ,
-                    'container_class' => 'manu-principal'
+                    'container_class' => 'menu-principal'
                 );
                 wp_nav_menu($args);
 
