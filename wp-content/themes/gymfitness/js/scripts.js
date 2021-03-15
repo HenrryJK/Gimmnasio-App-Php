@@ -3,5 +3,8 @@
 });*/
 
 jQuery(document).ready($ =>{
-    $('.menu-principal .menu').slicknav();
+    $('.menu-principal .menu').slicknav({
+        label: '',
+        appendTo: '.site_header'
+    });
 });
