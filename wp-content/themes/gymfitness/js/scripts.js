@@ -3,7 +3,7 @@
 });*/
 
 jQuery(document).ready($ =>{
-    $('.menu-principal .menu').slicknav({
+    $(' .site_header .menu-principal .menu').slicknav({
         label: '',
         appendTo: '.site_header'
     });
