@@ -1,4 +1,11 @@
 <?php 
+//Cuando el temas es Activado
+function gymfitness_setup() {
+    add_theme_support( 'post-thumbnails' );
+}
+add_action('after_setup_theme' , 'gymfitness_setup');
+
+
 /// menus creados que son de navegacion 
 function gymfitness_menus() { 
     register_nav_menus(array(
