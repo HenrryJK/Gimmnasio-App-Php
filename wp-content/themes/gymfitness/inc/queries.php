@@ -1,5 +1,4 @@
 <?php 
-
     function gymfitness_lista_clases() { ?>
         <ul class="lista-clases">
             <?php
@@ -23,14 +22,11 @@
                 $hora_inicio = get_field('hora_inicio');
                 $hora_fin = get_field('hora_fin');
               ?>
-    
                <p><?php the_field('dias_clase') ?> - <?php echo $hora_inicio . " a " . $hora_fin; ?></p>
               </div>
               </li>
           <?php endwhile; wp_reset_postdata(); ?>
-
         </ul>
         <?php
     }
-
 ?>
