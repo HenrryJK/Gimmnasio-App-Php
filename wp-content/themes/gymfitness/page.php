@@ -4,20 +4,27 @@
 </header> -->
 
 <?php get_header();  ?>
+    <main class="contenedor pagina seccion con-sidebar">
+        <div class="contenido-principal">
+        <?php while( have_posts() ):the_post();?>
 
-<?php while( have_posts() ):the_post();?>
+        <h1 class="text-center texto-primario"> <?php  the_title();   ?></h1>
 
-<h1> <?php  the_title();   ?></h1>
+        <?php  if(has_post_thumbnail()):
+        /// despyes de la coma es por de alli defino una clase personalizada para poder darle estilos a la img
+                the_post_thumbnail('blog' , array('class' => 'imagen-destacada'));
+                endif;
+            ?>
 
-<?php  if(has_post_thumbnail()):
-        the_post_thumbnail('blog');
-        endif;
-    ?>
+        <?php the_content(); ?>
+        <?php  endwhile; ?>
+        </div>
+        
+        <?php get_sidebar(); ?>
 
-<?php the_content(); ?>
-Escrito por : <?php the_author(); ?>
+    </main>
+    
+    
+   
 
-Escrito Fecha : <?php the_Date(); ?>
-
-<?php  endwhile; ?>
 <?php get_footer();  ?>

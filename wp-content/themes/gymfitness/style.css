@@ -63,7 +63,8 @@ h3 {
 h4 {
   font-size: 2.4rem;
 }
-
+  
+/* Globales */
 a {
   text-decoration: none;
   color: var(--grisClaro);
@@ -77,6 +78,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 .contenedor {
   /* dispositivo movil */
   max-width: 1200px;
@@ -85,6 +87,20 @@ img {
 }
 hr {
   border: 1px solid var(--grisClaro);
+}
+.imagen-destacada{
+  margin-bottom: 3rem;
+}
+
+ /*  Utilidades   */
+ .text-center{
+  text-align: center;
+}
+.texto-primario{
+  color: var(--colorPrimario);
+}
+.seccion{
+  padding: 5rem 0;
 }
 
 /* header   */
@@ -248,4 +264,22 @@ hr {
     font-size: 2.4rem;
     margin: 0;
   }
+}
+
+/* Paginas   */
+.pagina h1 {
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .pagina.con-sidebar{
+    display: flex;
+    justify-content: space-between;
+}
+.con-sidebar .contenido-principal {
+  flex: 0 0 calc(65% - 2rem) ;
+}
+.con-sidebar .sidebar {
+  flex : 0 0 calc(35% - 2rem);
+}
 }
