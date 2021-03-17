@@ -283,3 +283,17 @@ hr {
   flex : 0 0 calc(35% - 2rem);
 }
 }
+
+/*  No Sidebar  */
+.no-sidebar{
+  display: flex;
+  justify-content: center;
+}
+.no-sidebar .contenido-principal{
+  /* Para si descomentas esto tendras problemas con el scroll al momento de
+  encoger la pagina   */
+   /* flex: 0 0 800px; */
+
+  /*  SOlucion   */
+  flex: 0 1 800px;
+}
