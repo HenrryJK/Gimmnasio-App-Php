@@ -40,7 +40,44 @@ class GymFitness_Clases_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-		echo esc_html__( 'Hello, World!', 'text_domain' );
+	
+        ?>
+            <ul>
+                <?php 
+                // tomo o llamo a la clase gymfitness_post_types.php => "gymfitness_clases" 
+                $args = array(
+                    'post_type' => 'gymfitness_clases' ,
+                    'posts_per_page' => 3 ,
+                    'orderby' => 'rand'
+                );
+
+                $clases = new WP_Query($args);
+                while($clases ->have_posts()):$clases -> the_post();
+                ?>
+             <!--  Aqui esta el widget que se mostrara a lado superior 
+            osea en el sidebar   -->
+            <li class="clase-sidebar">
+                <div class=imagen></div>
+                <?php  the_post_thumbnail('thumbnail') ?>
+
+                <div class="contenido-clase">
+                    <a href="<?php the_permalink(); ?>">
+                    <h3><?php the_title(); ?></h3>
+                </a>
+                <?php 
+                $hora_inicio = get_field('hora_inicio');
+                $hora_fin = get_field('hora_fin');
+              ?>
+               <p><?php the_field('dias_clase') ?> - <?php echo $hora_inicio . " a " . $hora_fin; ?></p>
+                </div>
+            </li>
+
+             <?php endwhile; wp_reset_postdata(); ?>
+            </ul>
+
+        <?php 
+
+
 		echo $args['after_widget'];
 	}
 
