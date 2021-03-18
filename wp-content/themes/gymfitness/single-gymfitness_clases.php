@@ -1,5 +1,3 @@
-
-
 <?php get_header();  ?>
     <main class="contenedor pagina seccion con-sidebar">
         <div class="contenido-principal">
