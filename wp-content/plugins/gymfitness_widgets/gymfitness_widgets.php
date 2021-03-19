@@ -40,14 +40,18 @@ class GymFitness_Clases_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-	
+		$cantidad = $instance['cantidad'];
+		if ($cantidad == '') {
+			$cantidad= 3;
+		}
         ?>
+
             <ul>
                 <?php 
                 // tomo o llamo a la clase gymfitness_post_types.php => "gymfitness_clases" 
                 $args = array(
                     'post_type' => 'gymfitness_clases' ,
-                    'posts_per_page' => 3 ,
+                    'posts_per_page' => $cantidad ,
                     'orderby' => 'rand'
                 );
 
@@ -76,11 +80,8 @@ class GymFitness_Clases_Widget extends WP_Widget {
             </ul>
 
         <?php 
-
-
 		echo $args['after_widget'];
 	}
-
 	/**
 	 * Back-end widget form.
 	 *
@@ -88,13 +89,25 @@ class GymFitness_Clases_Widget extends WP_Widget {
 	 *
 	 * @param array $instance Previously saved values from database.
 	 */
+
+	 //CREANDO NUESTRO PROPIO WIDGET
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
-		?>
+		$cantidad = !empty($instance['cantidad'] ) ? $instance['cantidad'] : esc_html__('¿Cuantas Clases desea mostrar?' , 'gymfitness'); ?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<label for="<?php  echo esc_attr($this -> get_field_id('cantidad'))  ?>">
+				<?php esc_attr_e( '¿Cuantas Clases desea mostrar?', 'gymfitness'  );    ?>
+			</label>
+			<input
+			class="widefat"
+			id = "<?php  echo esc_attr($this -> get_field_id('cantidad'))  ?>"
+			name = "<?php  echo esc_attr($this -> get_field_name('cantidad'))  ?>"
+			type="number"
+			value = "<?php echo esc_attr($cantidad) ?>"
+	
+			/>
 		</p>
+
+
 		<?php 
 	}
 
@@ -110,7 +123,7 @@ class GymFitness_Clases_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['cantidad'] = ( ! empty( $new_instance['cantidad'] ) ) ? sanitize_text_field( $new_instance['cantidad'] ) : '';
 
 		return $instance;
 	}
