@@ -61,9 +61,10 @@ class GymFitness_Clases_Widget extends WP_Widget {
              <!--  Aqui esta el widget que se mostrara a lado superior 
             osea en el sidebar   -->
             <li class="clase-sidebar">
-                <div class=imagen></div>
+                <div class="imagen">
                 <?php  the_post_thumbnail('thumbnail') ?>
-
+			</div>
+			
                 <div class="contenido-clase">
                     <a href="<?php the_permalink(); ?>">
                     <h3><?php the_title(); ?></h3>
